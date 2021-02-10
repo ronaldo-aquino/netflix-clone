@@ -16,7 +16,7 @@ export default {
     return [
       {
         slug: "originals",
-        title: "Originais da Netflix",
+        title: "Destaque",
         items: await basicFetch(
           `/discover/tv/?with_network=213&language=${LANGUAGE}&api_key=${API_KEY}`
         ),
@@ -60,16 +60,40 @@ export default {
         slug: "romance",
         title: "Romance",
         items: await basicFetch(
-          `/discover/movie?with_genres=10748&language=${LANGUAGE}&api_key=${API_KEY}`
+          `/discover/movie?with_genres=10749&language=${LANGUAGE}&api_key=${API_KEY}`
         ),
       },
       {
-        slug: "Documentary",
-        title: "Documentários",
+        slug: "war",
+        title: "Guerra",
         items: await basicFetch(
-          `/discover/movie?with_genres=99&language=${LANGUAGE}&api_key=${API_KEY}`
+          `/discover/movie?with_genres=10752&language=${LANGUAGE}&api_key=${API_KEY}`
         ),
       },
     ];
+  },
+
+  getMovieInfo: async (movieId, type) => {
+    let info = {};
+    if (movieId) {
+      switch (type) {
+        case "movie":
+          info = await basicFetch(
+            `/movie/${movieId}?language=${LANGUAGE}&api_key=${API_KEY}`
+          );
+          break;
+
+        case "tv":
+          info = await basicFetch(
+            `/tv/${movieId}?language=${LANGUAGE}&api_key=${API_KEY}`
+          );
+          break;
+
+        default:
+          return null;
+      }
+    }
+
+    return info;
   },
 };

@@ -1,1 +1,1 @@
-tempo do tutorial 1:10:48
+tempo do tutorial 2:26:17

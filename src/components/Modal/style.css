@@ -1,0 +1,37 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.madal-content {
+  width: 330px;
+  background-color: #111;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.modal-cover img {
+  width: 300px;
+}
+
+.btn-close {
+  margin-top: 15px;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0;
+  outline: none;
+}
+
+.btn-close:hover {
+  background-color: rgb(207, 207, 207);
+}
